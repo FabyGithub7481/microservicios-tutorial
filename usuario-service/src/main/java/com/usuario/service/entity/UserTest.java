@@ -25,5 +25,5 @@ public class UserTest {
   Long id;
   String name;
   String mail;
-  
+
 }
