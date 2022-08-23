@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@FeignClient(name = "moto-service",url = "http://localhost:8003")
+@FeignClient(name = "moto-service")
 @RequestMapping("/motorcycle")
 public interface MotorcycleFeignClient {
 
