@@ -42,12 +42,12 @@ public class UserService {
   }
 
   public List<Car> getCars(Long userId) {
-    List<Car> cars = restTemplate.getForObject("http://localhost:8082/car/user/" + userId, List.class);
+    List<Car> cars = restTemplate.getForObject("http://car-service/car/user/" + userId, List.class);
     return cars;
   }
 
   public List<Motorcycle> getMotorcycles(Long userId) {
-    List<Motorcycle> motorcycles = restTemplate.getForObject("http://localhost:8082/motorcycle/user/" + userId, List.class);
+    List<Motorcycle> motorcycles = restTemplate.getForObject("http://moto-service/motorcycle/user/" + userId, List.class);
     return motorcycles;
   }
 
@@ -77,7 +77,7 @@ public class UserService {
       resultado.put("Mensaje Carros: ","El usuario no tiene carros");
     }
     else{
-      resultado.put("Carros: ",cars);
+      resultado.put("Carros",cars);
     }
 
     List<Motorcycle> motorcycles= motorcycleFeignClient.getMotorcycles(userId);
@@ -86,7 +86,7 @@ public class UserService {
       resultado.put("Mensaje Motos: ", "El usuario no tiene motos");
     }
     else {
-      resultado.put("Motos: ",motorcycles);
+      resultado.put("Motos",motorcycles);
     }
 
     return  resultado;
