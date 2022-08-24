@@ -41,6 +41,8 @@ resilience4j.circuitbreaker:
       eventConsumerBufferSize: 10
 
 spring:
+  application:
+    zipkin: http://localhost:9411
   h2:
     console:
       enabled: true
