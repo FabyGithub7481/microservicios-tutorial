@@ -93,7 +93,7 @@ public class UserController {
     return ResponseEntity.ok(resultado);
   }
   private ResponseEntity<List<Car>> fallBackGetCars(@PathVariable("userId") Long id, RuntimeException exception){
-    return new ResponseEntity("El usuario: " + id + " iene los carros en el taller!!", HttpStatus.OK);
+    return new ResponseEntity("El usuario: " + id + " Tiene los carros en el taller!!", HttpStatus.OK);
   }
   private ResponseEntity<Car> fallBackSaveCars(@PathVariable("userId") Long id,@RequestBody Car car, RuntimeException exception){
     return new ResponseEntity("El usuario: " + id + " No Tiene dinero para los carros!!", HttpStatus.OK);
@@ -105,6 +105,6 @@ public class UserController {
     return new ResponseEntity("El usuario: " + id + " No Tiene dinero para las motos!!", HttpStatus.OK);
   }
   private ResponseEntity<Map<String, Object>> fallBackGetAll(@PathVariable("userId") Long id, RuntimeException exception){
-    return new ResponseEntity("El usuario: " + id + " No Tiene vehiculos!!", HttpStatus.OK);
+    return new ResponseEntity("El usuario: " + id + " Uno de los servicios de carro o moto se encuentra abajo!!", HttpStatus.OK);
   }
 }
